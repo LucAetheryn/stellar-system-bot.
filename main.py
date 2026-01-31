@@ -14,30 +14,41 @@ async def on_ready():
 
 @bot.command()
 async def owner(ctx):
-    owner_text = (
-        "<a:Instagram:820584675008577546> ***Instagram*** <a:Arrow:820637327969746974> https://www.instagram.com/Lucky.praditya/\n"
-        "<a:Twitter:820587292363718656> ***Twitter*** <a:Arrow:820637327969746974> https://twitter.com/luckypraditya1?s=09\n"
-        "<a:YouTube:820587271199653918> ***YouTube*** <a:Arrow:820637327969746974> https://youtube.com/channel/UCcHVBAX0fSBOctB_tKPDk5Q\n"
-        "<a:Discord:820576752576888902> ***Discord*** <a:Arrow:820637327969746974> https://discord.gg/QEhHc6UBHH"
+    embed = discord.Embed(
+        title="🚀 About Owner",
+        description=(
+            "<a:Instagram:820584675008577546> ***Instagram*** <a:Arrow:820637327969746974> [Lucky.praditya](https://www.instagram.com/Lucky.praditya/)\n"
+            "<a:Twitter:820587292363718656> ***Twitter*** <a:Arrow:820637327969746974> [luckypraditya1](https://twitter.com/luckypraditya1?s=09)\n"
+            "<a:YouTube:820587271199653918> ***YouTube*** <a:Arrow:820637327969746974> [Channel YouTube](https://youtube.com/channel/UCcHVBAX0fSBOctB_tKPDk5Q)\n"
+            "<a:Discord:820576752576888902> ***Discord*** <a:Arrow:820637327969746974> [Stellar Universe](https://discord.gg/QEhHc6UBHH)"
+        ),
+        color=0xBB86FC  # Warna ungu senada logo
     )
-    await ctx.send(owner_text)
+    embed.set_thumbnail(url=bot.user.display_avatar.url)
+    await ctx.send(embed=embed)
 
 @bot.command()
 async def rules(ctx):
-    rules_text = (
-        "<a:1_:853534476344098847>" * 15 + "\n"
-        "                           <a:___:859993289113731123>     ***RULES*** <a:___:859993289113731123>\n"
-        "<a:2_:853534457457803265>" * 15 + "\n\n"
-        "**Kami memiliki aturan untuk mengakomodasi komunitas kami**\n\n"
-        "**1. Harap menghormati semua orang**\nAnda bebas untuk mengungkapkan pendapat yang berbeda tetapi juga menghormati orang lain.\n\n"
-        "**2. Hindari perilaku buruk**\nBersikaplah sopan. Itu saja. Argumen politik / agama juga boleh-boleh saja - tetapi bukan untuk merendahkan orang lain.\n\n"
-        "**3. Jangan Spam**\nJangan melakukan spam, seperti teks, gambar, emoji, reaksi emoji, audio yang mengganggu. Anda akan Dipenjara dan spam yang berkelanjutan akan di ban dari server.\n\n"
-        "**4. Jangan Beriklan**\nJangan mempromosikan sendiri server Anda atau server lain tanpa izin. termasuk memposting tautan undangan, baik sosial media atau pun link penjualan ilegal.\n\n"
-        "**5. Hindari drama & Jangan Sirkel2an**\nCobalah untuk tidak memulai drama yang tidak perlukan. Lapor admin / staff bila ada yang membuat kegaduhan\n\n"
-        "**6. Gunakan channel sesuai namanya**\nKami memiliki channel yang berbeda untuk tema bahasan diserver, jadi misalkan jika ingin mabar bisa ke mabar dan sesuai channel masing-masing.\n\n"
-        "**7. Dilarang menggunakan nickname toxic / foto profile yang dapat menimbulkan permasalahan**\nMohon menggunakan nick name dan profile picture SFW alias aman untuk semua umur tanpa mengandung unsur SARA atau mengundang pertikaian."
+    # Header dekorasi menggunakan emoji yang kamu berikan
+    header = "<a:1_:853534476344098847>" * 10
+    
+    embed = discord.Embed(
+        title=f"{header}\nRULES STELLAR UNIVERSE\n{header}",
+        description="**Kami memiliki aturan untuk mengakomodasi komunitas kami**",
+        color=0xBB86FC
     )
-    await ctx.send(rules_text)
+    
+    embed.add_field(name="1. Harap menghormati semua orang", value="Anda bebas untuk mengungkapkan pendapat yang berbeda tetapi juga menghormati orang lain.", inline=False)
+    embed.add_field(name="2. Hindari perilaku buruk", value="Bersikaplah sopan. Argumen politik/agama boleh saja, tapi bukan untuk merendahkan.", inline=False)
+    embed.add_field(name="3. Jangan Spam", value="Teks, gambar, atau emoji berlebihan akan dipenjara/ban.", inline=False)
+    embed.add_field(name="4. Jangan Beriklan", value="Dilarang promosi server lain/sosmed tanpa izin.", inline=False)
+    embed.add_field(name="5. Hindari drama & Sirkel2an", value="Jangan mulai drama. Lapor staff jika ada kegaduhan.", inline=False)
+    embed.add_field(name="6. Gunakan channel sesuai namanya", value="Gunakan channel sesuai tema bahasan masing-masing.", inline=False)
+    embed.add_field(name="7. Nickname & Foto Profil SFW", value="Gunakan identitas yang aman (SFW) tanpa unsur SARA.", inline=False)
+    
+    embed.set_footer(text="Terima kasih telah mematuhi aturan Stellar Universe!")
+    
+    await ctx.send(embed=embed)
 
 token = os.getenv('TOKEN')
 bot.run(token)
