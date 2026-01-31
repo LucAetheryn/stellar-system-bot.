@@ -16,41 +16,39 @@ async def on_ready():
 async def owner(ctx):
     embed = discord.Embed(
         title="🚀 About Owner",
-        description="Hubungi owner Stellar Universe melalui platform di bawah ini:",
-        color=0xBB86FC
+        color=0xBB86FC # Warna ungu senada logo
     )
-    # Link dibuat sejajar menggunakan inline=True
-    embed.add_field(name="📸 Instagram", value="[Lucky.praditya](https://www.instagram.com/Lucky.praditya/)", inline=True)
-    embed.add_field(name="🐦 Twitter", value="[luckypraditya1](https://twitter.com/luckypraditya1?s=09)", inline=True)
-    embed.add_field(name="🎥 YouTube", value="[Channel](https://youtube.com/channel/UCcHVBAX0fSBOctB_tKPDk5Q)", inline=True)
-    embed.add_field(name="💬 Discord", value="[Stellar Universe](https://discord.gg/QEhHc6UBHH)", inline=True)
+    
+    # Menggunakan inline=True agar link media sosial berjejer ke samping
+    embed.add_field(name="<a:Instagram:820584675008577546> Instagram", value="<a:Arrow:820637327969746974> [Lucky.praditya](https://www.instagram.com/Lucky.praditya/)", inline=True)
+    embed.add_field(name="<a:Twitter:820587292363718656> Twitter", value="<a:Arrow:820637327969746974> [luckypraditya1](https://twitter.com/luckypraditya1?s=09)", inline=True)
+    embed.add_field(name="<a:YouTube:820587271199653918> YouTube", value="<a:Arrow:820637327969746974> [Channel](https://youtube.com/channel/UCcHVBAX0fSBOctB_tKPDk5Q)", inline=True)
+    embed.add_field(name="<a:Discord:820576752576888902> Discord", value="<a:Arrow:820637327969746974> [Stellar Universe](https://discord.gg/QEhHc6UBHH)", inline=True)
     
     embed.set_thumbnail(url=bot.user.display_avatar.url)
     await ctx.send(embed=embed)
 
 @bot.command()
 async def rules(ctx):
-    header = "✨ " + "━" * 10 + " ✨"
-    embed = discord.Embed(
-        title=f"{header}\nRULES STELLAR UNIVERSE\n{header}",
-        description="**Harap patuhi aturan demi kenyamanan bersama**",
-        color=0xBB86FC
+    # Teks rules murni sesuai permintaan tanpa perubahan teks sama sekali
+    rules_message = (
+        "<a:1_:853534476344098847><a:1_:853534476344098847><a:1_:853534476344098847><a:1_:853534476344098847><a:1_:853534476344098847><a:1_:853534476344098847><a:1_:853534476344098847><a:1_:853534476344098847><a:1_:853534476344098847><a:1_:853534476344098847><a:1_:853534476344098847><a:1_:853534476344098847><a:1_:853534476344098847><a:1_:853534476344098847><a:1_:853534476344098847>\n"
+        "                           <a:___:859993289113731123>     ***RULES*** <a:___:859993289113731123> \n"
+        "<a:2_:853534457457803265><a:2_:853534457457803265><a:2_:853534457457803265><a:2_:853534457457803265><a:2_:853534457457803265><a:2_:853534457457803265><a:2_:853534457457803265><a:2_:853534457457803265><a:2_:853534457457803265><a:2_:853534457457803265><a:2_:853534457457803265><a:2_:853534457457803265><a:2_:853534457457803265><a:2_:853534457457803265><a:2_:853534457457803265>\n\n"
+        "**Kami memiliki aturan untuk mengakomodasi komunitas kami**\n\n"
+        "**1. Harap menghormati semua orang**\n Anda bebas untuk mengungkapkan pendapat yang berbeda tetapi juga menghormati orang lain.\n\n"
+        "**2. Hindari perilaku buruk**\n Bersikaplah sopan. Itu saja. Argumen politik / agama juga boleh-boleh saja - tetapi bukan untuk merendahkan orang lain.\n\n"
+        "**3. Jangan Spam**\n Jangan melakukan spam, seperti teks, gambar, emoji, reaksi emoji, audio yang mengganggu. Anda akan Dipenjara dan spam yang berkelanjutan akan di ban dari server.\n\n"
+        "**4. Jangan Beriklan**\n Jangan mempromosikan sendiri server Anda atau server lain tanpa izin. termasuk memposting tautan undangan, baik sosial media atau pun link penjualan ilegal.\n\n"
+        "**5. Hindari drama & Jangan Sirkel2an**\n Cobalah untuk tidak memulai drama yang tidak perlukan. Lapor admin / staff bila ada yang membuat kegaduhan\n\n"
+        "**6. Gunakan channel sesuai namanya**\n Kami memiliki channel yang berbeda untuk tema bahasan diserver, jadi misalkan jika ingin mabar bisa ke mabar dan sesuai channel masing-masing.\n\n"
+        "**7. Dilarang menggunakan nickname toxic / foto profile yang dapat menimbulkan permasalahan**\n Mohon menggunakan nick name dan profile picture SFW alias aman untuk semua umur tanpa mengandung unsur SARA atau mengundang pertikaian."
     )
     
-    rules_list = [
-        ("1. Hormati Sesama", "Hargai pendapat orang lain dan bersikap sopan."),
-        ("2. No Bad Behavior", "Hindari politik/sara yang merendahkan."),
-        ("3. No Spam", "Dilarang spam teks, gambar, atau emoji berlebihan."),
-        ("4. No Advertising", "Dilarang promosi tanpa izin admin."),
-        ("5. Hindari Drama", "Jangan memancing keributan atau sirkel-sirkelan."),
-        ("6. Sesuai Channel", "Gunakan channel sesuai dengan fungsinya."),
-        ("7. SFW Profile", "Gunakan nama dan foto profil yang aman/sopan.")
-    ]
-    
-    for name, value in rules_list:
-        embed.add_field(name=name, value=value, inline=False)
-        
-    embed.set_footer(text="Stellar System | Melayani dengan Bintang")
+    embed = discord.Embed(
+        description=rules_message,
+        color=0xBB86FC
+    )
     await ctx.send(embed=embed)
 
 token = os.getenv('TOKEN')
