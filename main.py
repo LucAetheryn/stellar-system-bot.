@@ -14,7 +14,6 @@ async def on_ready():
     await bot.change_presence(activity=discord.Game(name="Managing Stellar System"))
     print(f'{bot.user} is online!')
 
-
 async def load_extensions():
     for filename in os.listdir('./cogs'):
         if filename.endswith('.py'):
