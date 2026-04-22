@@ -13,8 +13,11 @@ class Welcome(commands.Cog):
             member_count = len(member.guild.members)
 
             welcome_msg = (
-                f"Welcome {member.mention} ke **Stellar Universe**!\n"
-                f"Kamu member ke **#{member_count}**"
+                f"<a:2_:853534457457803265> <a:1_:853534476344098847> <a:2_:853534457457803265> <a:1_:853534476344098847> <a:2_:853534457457803265>\n\n"
+                f"[<a:Pika:853530949357797396>] Welcome To **Stellar Universe**\n\n"
+                f"<a:MZ:853520576240680960>〢User Registed {member.mention}\n"
+                f"<a:MZ:853520576240680960>〢User Position **#{member_count}**\n"
+                f"<a:MZ:853520576240680960>〢Server Name **Stellar Universe**"
             )
 
             await channel.send(welcome_msg)
