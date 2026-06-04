@@ -17,8 +17,7 @@ import database as db
 from utils import embeds
 from utils.checks import is_admin, is_moderator
 from utils.logger import log
-from views.ticket_view import TicketActionView, TicketPanelView
-
+from ticket_view import TicketActionView, TicketPanelView
 
 class TicketCog(commands.Cog, name="Tickets"):
     """Ticket system commands."""
