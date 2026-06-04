@@ -13,7 +13,7 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 
-from database import database as db
+import database as db
 from utils import embeds
 from utils.checks import is_admin, is_moderator
 from utils.logger import log
