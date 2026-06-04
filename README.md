@@ -1,4 +1,4 @@
-# Stellar System V2
+# Stellar System V3
 
 A professional, feature-rich Discord bot for the **Stellar Universe** server, built with discord.py 2.x, full slash command support, a modular Cog architecture, and SQLite persistence.
 
