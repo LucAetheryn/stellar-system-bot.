@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import discord
 
-from database import database as db
+import database as db
 from utils import embeds
 from utils.config import STAFF_ROLE_ID
 from utils.logger import log
